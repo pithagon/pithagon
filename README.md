@@ -1,14 +1,27 @@
-### Hi there 👋
+# [Pithagon website](https://swr.vercel.app)
 
-**Pithagon** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+The official website for [Pithagon](https://github.com/pithagon/pithagon.github.io).
 
-Here are some ideas to get you started:
+The project uses [pnpm](https://pnpm.io), [Nextra](https://nextra.vercel.app) and deploys via [Vercel](https://vercel.com). To develop it locally, clone this repository and run the following command to start the local dev server:
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
+```bash
+pnpm install
+pnpm dev
+```
+
+And visit `localhost:3000` to preview your changes.
+
+## Contributing
+
+When making a change, or creating a new page, please make sure to edit all language files. You can simply copy the content of the edited English document (or the edited paragraph) and apply it to other language files. And then, volunteers are welcome to help with any untranslated sections.
+
+## Contributors
+
+- [https://github.com/pithagon/pithagon.github.io/graphs/contributors](https://github.com/pithagon/pithagon.github.io/graphs/contributors)
+- Simplified Chinese translation done by Fang Lu ([@huzhengen](https://github.com/huzhengen))
+- Spanish translation done by Markoz Peña ([@markozxuu](https://twitter.com/markozxuu))
+- Japanese translation done by uttk ([@uttk](https://github.com/uttk)), Tomohiro SHIOYA ([@shioyang](https://github.com/shioyang))
+- Korean translation done by SeulGi Choi ([@cs09g](https://github.com/cs09g))
+- Russian translation done by Valentin Politov ([@valentinpolitov](https://github.com/valentinpolitov))
+- Brazilian Portuguese translation done by Guilherme Sousa ([@guilherssousa](https://github.com/guilherssousa))
+- French translation done by [@Olafr9500](https://github.com/Olafr9500)
