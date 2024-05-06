@@ -2,6 +2,10 @@
 
 html {
   font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1, "ss06" 1 !important;
+  font-family: Segoe UI, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue,
+    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
 }
 
 [data-reach-skip-link] {

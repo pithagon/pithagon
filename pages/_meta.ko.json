@@ -8,10 +8,6 @@
     "title": "문서",
     "type": "page"
   },
-  "examples": {
-    "title": "예시",
-    "type": "page"
-  },
   "blog": {
     "title": "블로그",
     "type": "page",
