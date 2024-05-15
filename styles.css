@@ -6,7 +6,7 @@ html {
     Cantarell, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 
-.pithagon-svg{
+.pithagon-svg {
   @apply fill-current;
 }
 
