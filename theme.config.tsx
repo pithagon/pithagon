@@ -79,7 +79,7 @@ const FOOTER_LINK_TEXT = {
 
 const config: DocsThemeConfig = {
   backgroundColor: {
-    dark: '13,13,13',
+    dark: '1,1,1',
     light: '255,255,255'
   },
   banner: {
