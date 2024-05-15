@@ -1,14 +1,26 @@
-### Hi there 👋
+# [SWR website](https://swr.vercel.app)
 
-**Pithagon** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+The official website for [SWR](https://github.com/vercel/swr).
 
-Here are some ideas to get you started:
+To develop locally, clone this repository and run the following command to start
+the local dev server:
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
+```bash
+yarn
+yarn dev
+```
+
+And visit `localhost:3000` to preview your changes.
+
+## Contributors
+
+- https://github.com/vercel/pithagon.github.io/graphs/contributors
+- Simplified Chinese translation done by Fang Lu
+  ([@huzhengen](https://github.com/huzhengen))
+- Spanish translation done by Markoz Peña
+  ([@markozxuu](https://twitter.com/markozxuu))
+- Japanese translation done by uttk ([@uttk](https://github.com/uttk)), Tomohiro
+  SHIOYA ([@shioyang](https://github.com/shioyang))
+- Korean translation done by SeulGi Choi ([@cs09g](https://github.com/cs09g))
+- Russian translation done by Valentin Politov
+  ([@valentinpolitov](https://github.com/valentinpolitov))

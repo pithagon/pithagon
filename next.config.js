@@ -1,69 +1,91 @@
-const withNextra = require("nextra")({
-  theme: "nextra-theme-docs",
-  themeConfig: "./theme.config.js",
+import bundleAnalyzer from '@next/bundle-analyzer'
+import nextra from 'nextra'
+
+const withNextra = nextra({
+  theme: 'nextra-theme-docs',
+  themeConfig: './theme.config.tsx',
+  defaultShowCopyCode: true,
   latex: true,
   staticImage: true,
-  flexsearch: {
-    codeblocks: false,
+  transform(content, { route }) {
+    if (route.startsWith('/en/docs/advanced/dynamic-markdown-import')) {
+      return `
+${content}
+export function getStaticProps() {
+  return {
+    props: {
+      foo: 'from nextra config'
+    }
+  }
+}`
+    }
+    return content
   },
-  defaultShowCopyCode: true,
-});
+  transformPageMap(pageMap, locale) {
+    if (locale === 'en') {
+      pageMap = [
+        ...pageMap,
+        {
+          name: 'virtual-page',
+          route: '/en/virtual-page',
+          frontMatter: { sidebarTitle: 'Virtual Page' }
+        }
+      ]
+    }
+    return pageMap
+  },
+})
 
-module.exports = withNextra({
-  i18n: {
-    locales: ["en-US", "zh-CN", "es-ES", "fr-FR", "pt-BR", "ja", "ko", "ru"],
-    defaultLocale: "en-US",
-  },
-  redirects: () => {
-    return [
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true'
+})
+
+/**
+ * @type {import('next').NextConfig}
+ */
+export default withBundleAnalyzer(
+  withNextra({
+    eslint: {
+      // Eslint behaves weirdly in this monorepo.
+      ignoreDuringBuilds: true
+    },
+    i18n: {
+      locales: ['en', 'es', 'ru'],
+      defaultLocale: 'en'
+    }, // basePath: "/some-base-path",
+    distDir: './.next', // Nextra supports custom `nextConfig.distDir`
+    redirects: () => [
       {
-        source: "/docs",
-        destination: "/docs/getting-started",
-        statusCode: 301,
+        source: '/change-log',
+        destination: '/docs/change-log',
+        statusCode: 301
       },
       {
-        source: "/advanced/performance",
-        destination: "/docs/advanced/performance",
-        statusCode: 301,
+        source: '/blog/swr-1',
+        destination: '/blog/swr-v1',
+        statusCode: 301
       },
       {
-        source: "/advanced/cache",
-        destination: "/docs/advanced/cache",
-        statusCode: 301,
+        source: '/docs.([a-zA-Z-]+)',
+        destination: '/docs/getting-started',
+        statusCode: 302
       },
       {
-        source: "/docs/cache",
-        destination: "/docs/advanced/cache",
-        statusCode: 301,
+        source: '/docs',
+        destination: '/docs/getting-started',
+        statusCode: 302
       },
       {
-        source: "/docs/options",
-        destination: "/docs/api",
-        statusCode: 301,
+        source: '/examples',
+        destination: '/examples/basic',
+        statusCode: 302
       },
       {
-        source: "/change-log",
-        destination: "/docs/change-log",
-        statusCode: 301,
-      },
-      {
-        source: "/blog/swr-1",
-        destination: "/blog/pithagon-v1",
-        statusCode: 301,
-      },
-      {
-        source: "/docs",
-        destination: "/docs/getting-started",
-        statusCode: 302,
-      },
-      {
-        source: "/examples",
-        destination: "/examples/basic",
-        statusCode: 302,
-      },
-    ];
-  },
-  siteUrl: process.env.SITE_URL || 'https://pithagon.com',
-  generateRobotsTxt: true,
-  reactStrictMode: true,
-});
+        source: '/',
+        destination: '/en',
+        permanent: true
+      }
+    ],
+    reactStrictMode: true
+  })
+)
