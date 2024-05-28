@@ -92,7 +92,7 @@ const config: DocsThemeConfig = {
   },
   darkMode: true,
   docsRepositoryBase:
-    'https://github.com/pithagon/nextra/blob/core/examples/pithagon.github.io',
+    'https://github.com/pithagon/pithagon/blob/main',
   editLink: {
     content: function useText() {
       const { locale } = useRouter()
